@@ -54,8 +54,8 @@
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <table class="table">
-  <thead>
+          <table id="booktable" class="table">
+    <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Title</th>
@@ -153,5 +153,10 @@
         
       </footer>
     </div>
+    <!--source from http://tristen.ca/tablesort/demo/--> 
+    <script src="js/tablesort.min.js"></script>
+    <script>
+      new Tablesort(document.getElementById('booktable'));
+    </script>
   </body>
-</html>
+</html> 
