@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-6 col-xs-6">
+          <h1> Clara Scott's Favorite Books </h1>
+        </div>
+      </header>
+
+      <nav class="row navbar navbar-default">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#myMenu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="myMenu">  
+        <ul>
+        <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;    
+         <a href="userinfo.html">User Information</a> &nbsp;&nbsp;&nbsp; 
+        <a href="books.html">Book Info</a> &nbsp;&nbsp;&nbsp;
+        </ul>
+        </div>
+      </nav>
+
+      <main class="row">
+        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+          <div id='someApp'>
+            <form v-on:submit.prevent="fetchUserData">
+              <button type="submit">Refresh</button>
+            </form>
+          <h1> {{ result.name.first }} {{ result.name.last }} Biography</h1>
+          
+          <p>Full Name: {{ result.name.first }} {{ result.name.last }}</p>
+          
+          <p>Country: {{result.location.country}}</p>
+          
+          <p>Age: {{result.dob.age}}</p>
+
+          <p>Email: <a v-bind:href="'mailto:'+ result.email">{{  result.email  }}</a></p>
+          
+          <p>Birthdate: {{prettyBirthday}}</p>
+          
+
+           <!-- <a href="https://randomuser.me/api/portraits/women/54.jpg">Check out {{ result.name.first }}! -->
+         <!-- <img alt="picture" src="img/clara.jpg"
+         width=250" height="250"> -->
+         <a v-bind:href='result.picture.large'><img v-bind:src='result.picture.large'></a>
+        </a>
+          <!-- Source: Randomuser.me> -->
+        </div>
+        </div>
+        
+
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          
+        </div>
+      </main>
+
+      <footer class="row">
+        
+      </footer>
+    </div>
+    <script src='js/random.js'></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  </body>
+</html>

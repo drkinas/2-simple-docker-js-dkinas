@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-6 col-xs-6">
+          <h1> Clara Scott's Favorite Books </h1>
+        </div>
+      </header>
+
+      <nav class="row navbar navbar-default">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#myMenu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="myMenu">  
+        <ul>
+        <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;    
+         <a href="userinfo.html">User Information</a> &nbsp;&nbsp;&nbsp; 
+        <a href="books.html">Book Info</a> &nbsp;&nbsp;&nbsp;
+        </ul>
+        </div>
+      </nav>
+
+      <main class="row">
+        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+          
+        </div>
+
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          <a href="https://m.media-amazon.com/images/M/MV5BMTQ5NDlmZWUtMjIyMC00NzQ3LTg3OWYtMzRkY2FiNzQ0Njc4XkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_.jpg">This series was turned into a movie too!
+         <img alt="Percy Jackson" src="img/percyjackson.jpg"
+         width=150" height="300"></a>
+         <!Source: IMDB>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div id='offerApp'>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Year Published</th>
+                  <th>Publisher</th>
+                  <th>Page Count</th>
+                  <th>MSRP</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <tr v-for="offer in students">
+                        <td>{{ offer.id }}</td>
+                        <td>{{ offer.title }}</td>
+                        <td>{{ offer.author }}</td>
+                        <td>{{ offer.yearpublished }}</td>
+                        <td>{{ offer.publisher }}</td>
+                        <td>{{ offer.pagecount }}</td>
+                        <td>{{ offer.msrp }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <form v-on:submit.prevent="postNewOffer">
+  
+              <div class="form-group">
+                <label for="exampleInputEmail1">Book Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.title">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Author</label>
+                <input type="text" class="form-control" id="author" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.author">
+              </div>
+               <div class="form-group">
+                <label for="exampleInputEmail1">Year Published</label>
+                <input type="number" class="form-control" id="yearpublished" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.yearpublished">
+              </div>
+               <div class="form-group">
+                <label for="exampleInputEmail1">Publisher</label>
+                <input type="text" class="form-control" id="publisher" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.publisher">
+              </div>
+               <div class="form-group">
+                <label for="exampleInputEmail1">Page Number</label>
+                <input type="number" class="form-control" id="pagecount" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.pagecount">
+              </div>
+               <div class="form-group">
+                <label for="exampleInputEmail1">MSRP</label>
+                <input type="text" class="form-control" id="msrp" aria-describedby="emailHelp" placeholder="Enter email"
+                v-model="bookForm.msrp">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div> 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          
+      </main>
+
+      <footer class="row">
+        
+      </footer>
+    </div>
+
+    
+    <!--source from http://tristen.ca/tablesort/demo/--> 
+    <script src ='js/books.js'></script>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+      new Tablesort(document.getElementById('booktable'));
+    </script>
+  </body>
+</html> 
